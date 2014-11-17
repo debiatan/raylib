@@ -225,17 +225,17 @@ void DrawRectangleLines(int posX, int posY, int width, int height, Color color)
 {
     rlBegin(RL_LINES);
         rlColor4ub(color.r, color.g, color.b, color.a);
-        rlVertex2i(posX + 1, posY + 1);
-        rlVertex2i(posX + width, posY + 1);
+        rlVertex2f(posX + .5, posY + .5);
+        rlVertex2f(posX + width - .5, posY + .5);
 
-        rlVertex2i(posX + width, posY + 1);
-        rlVertex2i(posX + width, posY + height);
+        rlVertex2f(posX + width - .5, posY + .5);
+        rlVertex2f(posX + width, posY + height - .5);
 
-        rlVertex2i(posX + width, posY + height);
-        rlVertex2i(posX + 1, posY + height);
+        rlVertex2f(posX + width - .5, posY + height - .5);
+        rlVertex2f(posX + .5, posY + height - .5);
 
-        rlVertex2i(posX + 1, posY + height);
-        rlVertex2i(posX + 1, posY + 1);
+        rlVertex2f(posX + .5, posY + height - .5);
+        rlVertex2f(posX + .5, posY + - .5);
     rlEnd();
 }
 
